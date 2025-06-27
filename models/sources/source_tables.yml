@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: source_dev
+    database: fintech_dev
+    schema: source_dev
+    tables:
+      - name: customers
+        description: "this table contains all customers data"
+      - name: payments
+        description: "this table contains all the payments related data"
