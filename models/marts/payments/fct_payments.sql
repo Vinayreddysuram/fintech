@@ -1,17 +1,21 @@
 {{ config(
-    schema='marts_dev',
-    materialized:'table'
-
+    materialized = 'incremental',
+    unique_key = 'payment_id',
+    schema = 'marts_dev'
 ) }}
 
 select
-  payment_id,
-  customer_id,
-  amount,
-  status,
-  payment_method,
-  paid_at::date as payment_date,
-  date_trunc('month', paid_at) as payment_month,
-  case when status = 'success' then 1 else 0 end as is_successful,
-  case when status != 'success' then 1 else 0 end as is_failed
+    payment_id,
+    customer_id,
+    amount,
+    status,
+    payment_method,
+    payment_date,
+    payment_month,
+    is_successful,
+    is_failed
 from {{ ref('stg_payments') }}
+
+{% if is_incremental() %}
+  where payment_date > (select max(payment_date) from {{ this }})
+{% endif %}
