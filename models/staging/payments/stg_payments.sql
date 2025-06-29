@@ -6,7 +6,7 @@
 with source as (
 
     select * 
-    from {{ source('source_dev', 'payments') }}
+    from {{ source('mysource', 'payments') }}
 
 ),
 
