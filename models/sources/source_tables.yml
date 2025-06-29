@@ -8,6 +8,6 @@ sources:
       - name: customers
         description: "this table contains all customers data"
       - name: payments
-        description: "this table contains all the payments related datavinay_CI"
+        description: "this table contains all the payments related datavinay_CI_test"
       - name : employees
         description: "this table conatins employees info"
