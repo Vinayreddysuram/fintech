@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: source_dev
+  - name: mysource
     database: fintech_dev
     schema: source_dev
     tables:
@@ -9,3 +9,5 @@ sources:
         description: "this table contains all customers data"
       - name: payments
         description: "this table contains all the payments related data"
+      - name : employees
+        description: "this table conatins employees info"
