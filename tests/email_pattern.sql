@@ -1,1 +1,1 @@
-select * from {{ ref('stg_customers') }} where email not like '%@%'
+select * from {{ ref('stg_customers') }} where email not like '%@12%'
