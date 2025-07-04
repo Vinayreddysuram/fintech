@@ -1,0 +1,24 @@
+models:
+- name: dim_customers
+  description: This model provides a comprehensive view of customer information, including
+    personal details, signup date, and account status. It is designed to facilitate
+    customer analysis by offering derived fields such as signup year and month, and
+    an active status indicator.
+  columns:
+  - name: customer_id
+    description: A unique identifier for each customer.
+  - name: name
+    description: The full name of the customer.
+  - name: email
+    description: The email address of the customer.
+  - name: signup_date
+    description: The date when the customer signed up.
+  - name: status
+    description: The current status of the customer account, indicating whether it
+      is active or inactive.
+  - name: signup_year
+    description: The year when the customer signed up.
+  - name: signup_month
+    description: The month when the customer signed up.
+  - name: is_active
+    description: Indicates whether the customer account is currently active.

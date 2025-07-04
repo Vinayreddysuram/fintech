@@ -1,6 +1,8 @@
 {{ config(
-    materialized = 'view',
-    schema = 'marts_dev'
+    materialized = 'table',
+    schema = 'marts_dev',
+      transient= false
+  
 ) }}
 
 with customers as (
